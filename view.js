@@ -1,5 +1,8 @@
 export class View {
     constructor(presenter) {
+        // Ausgabeelement
+        this.ausgabe = document.getElementById('ausgabe');
+
         // Mausklicks auf Buttons
         const buttonOben = document.getElementById('buttonOben');
         buttonOben.addEventListener('click', () => {
@@ -42,5 +45,9 @@ export class View {
                     break;
             }
         });
+    }
+
+    displayText(text) {
+        this.ausgabe.innerText = text;
     }
 }

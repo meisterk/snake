@@ -5,18 +5,18 @@ export class Presenter {
     }
 
     nachOben() {
-        console.log('nach Oben');
+        this.view.displayText('nach Oben');
     }
 
     nachRechts() {
-        console.log('nach Rechts');
+        this.view.displayText('nach Rechts');
     }
 
     nachUnten() {
-        console.log('nach Unten');
+        this.view.displayText('nach Unten');
     }
 
     nachLinks() {
-        console.log('nach Links');
+        this.view.displayText('nach Links');
     }
 }
