@@ -1,5 +1,13 @@
 main {
     background-color: burlywood;
+    width: 10em;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    align-items: stretch;
 }
 
 canvas {
@@ -8,4 +16,8 @@ canvas {
 
 #buttonOben, #buttonUnten{
     display: block;
+    width: 100%;
+}
+#buttonLinks, #buttonRechts{
+    
 }
