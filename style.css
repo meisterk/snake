@@ -15,7 +15,7 @@ h1{
 }
 
 main {
-    width: 10em;
+    width: 14em;
     margin: 0 auto;
     padding: 0;
 }
@@ -26,6 +26,7 @@ main {
 }
 
 canvas {
+    width: 11em;
     background-color: yellowgreen;
 }
 
