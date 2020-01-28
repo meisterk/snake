@@ -2,22 +2,22 @@ export class View {
     constructor(presenter) {
         // Mausklicks auf Buttons
         const buttonOben = document.getElementById('buttonOben');
-        buttonOben.addEventListener('click', event => {
+        buttonOben.addEventListener('click', () => {
             presenter.nachOben();
         });
 
         const buttonLinks = document.getElementById('buttonLinks');
-        buttonLinks.addEventListener('click', event => {
+        buttonLinks.addEventListener('click', () => {
             presenter.nachLinks();
         });
 
         const buttonRechts = document.getElementById('buttonRechts');
-        buttonRechts.addEventListener('click', event => {
+        buttonRechts.addEventListener('click', () => {
             presenter.nachRechts();
         });
 
         const buttonUnten = document.getElementById('buttonUnten');
-        buttonUnten.addEventListener('click', event => {
+        buttonUnten.addEventListener('click', () => {
             presenter.nachUnten();
         });
 
