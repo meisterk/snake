@@ -6,6 +6,7 @@ export class Presenter {
 
     nachOben() {
         this.view.displayText('nach Oben');
+        this.view.zeichneKreis(50, 50);
     }
 
     nachRechts() {

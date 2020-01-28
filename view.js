@@ -1,5 +1,9 @@
 export class View {
     constructor(presenter) {
+        // Zeichenkontext für canvas
+        const canvas = document.getElementById('canvas');
+        this.context = canvas.getContext('2d');
+
         // Ausgabeelement
         this.ausgabe = document.getElementById('ausgabe');
 
@@ -49,5 +53,13 @@ export class View {
 
     displayText(text) {
         this.ausgabe.innerText = text;
+    }
+
+    zeichneKreis(x, y) {
+        this.context.beginPath();
+        this.context.arc(x, y, 5, 0, 2 * Math.PI);
+        this.context.stroke();
+        this.context.fill();
+        this.context.closePath();
     }
 }
