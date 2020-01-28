@@ -1,0 +1,11 @@
+main {
+    background-color: burlywood;
+}
+
+canvas {
+    background-color: yellowgreen;
+}
+
+#buttonOben, #buttonUnten{
+    display: block;
+}
