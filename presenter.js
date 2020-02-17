@@ -1,12 +1,15 @@
 import { View } from './view.js';
+import { Snake } from './snake.js';
+
 export class Presenter {
     constructor() {
         this.view = new View(this);
+        this.snake = new Snake(this.view);
+        this.snake.zeichnen();
     }
 
     nachOben() {
         this.view.displayText('nach Oben');
-        this.view.zeichneKreis(50, 50);
     }
 
     nachRechts() {
