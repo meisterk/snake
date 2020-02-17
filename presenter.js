@@ -8,27 +8,31 @@ export class Presenter {
         this.snake = new Snake(this.view);
         this.snake.zeichnen();
         this.timer = new Timer(this, 500);
+        this.timer.start();
     }
 
     timerAction() {
-        console.log('TimerAction');
+        this.snake.weiter();
+        this.snake.zeichnen();
     }
 
     nachOben() {
         this.view.displayText('nach Oben');
-        this.timer.start();
+        this.snake.nachOben();
     }
 
     nachRechts() {
         this.view.displayText('nach Rechts');
+        this.snake.nachRechts();
     }
 
     nachUnten() {
         this.view.displayText('nach Unten');
-        this.timer.stop();
+        this.snake.nachUnten();
     }
 
     nachLinks() {
         this.view.displayText('nach Links');
+        this.snake.nachLinks();
     }
 }
