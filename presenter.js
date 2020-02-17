@@ -18,10 +18,25 @@ export class Presenter {
     }
 
     timerAction() {
+        // Neu berechnen
         this.snake.weiter();
+        if (this.snakeFrisstApfel()) {
+            this.apfel.neuPositionieren();
+        }
+
+        // Neu zeichnen
         this.view.loescheAlles();
         this.apfel.zeichnen();
         this.snake.zeichnen();
+    }
+
+    snakeFrisstApfel() {
+        if (this.snake.x === this.apfel.x &&
+            this.snake.y === this.apfel.y) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     nachOben() {
