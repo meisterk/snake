@@ -7,12 +7,16 @@ export class Presenter {
         this.view = new View(this);
         this.snake = new Snake(this.view);
         this.snake.zeichnen();
-        this.timer = new Timer(500);
-        this.timer.start();
+        this.timer = new Timer(this, 500);
+    }
+
+    timerAction() {
+        console.log('TimerAction');
     }
 
     nachOben() {
         this.view.displayText('nach Oben');
+        this.timer.start();
     }
 
     nachRechts() {
@@ -21,6 +25,7 @@ export class Presenter {
 
     nachUnten() {
         this.view.displayText('nach Unten');
+        this.timer.stop();
     }
 
     nachLinks() {
