@@ -61,6 +61,6 @@ export class Snake {
     }
 
     zeichnen() {
-        this.view.zeichneKreis(this.x, this.y);
+        this.view.zeichneKreis(this.x, this.y, 'black');
     }
 }

@@ -55,7 +55,8 @@ export class View {
         this.ausgabe.innerText = text;
     }
 
-    zeichneKreis(x, y) {
+    zeichneKreis(x, y, farbe) {
+        this.context.fillStyle = farbe;
         this.context.beginPath();
         this.context.arc(x, y, 5, 0, 2 * Math.PI);
         this.context.stroke();
