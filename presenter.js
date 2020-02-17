@@ -1,11 +1,14 @@
 import { View } from './view.js';
 import { Snake } from './snake.js';
+import { Timer } from './timer.js';
 
 export class Presenter {
     constructor() {
         this.view = new View(this);
         this.snake = new Snake(this.view);
         this.snake.zeichnen();
+        this.timer = new Timer(500);
+        this.timer.start();
     }
 
     nachOben() {
