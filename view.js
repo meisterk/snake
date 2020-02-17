@@ -62,4 +62,8 @@ export class View {
         this.context.fill();
         this.context.closePath();
     }
+
+    loescheAlles() {
+        this.context.clearRect(0, 0, 200, 400);
+    }
 }

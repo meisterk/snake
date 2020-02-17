@@ -13,6 +13,7 @@ export class Presenter {
 
     timerAction() {
         this.snake.weiter();
+        this.view.loescheAlles();
         this.snake.zeichnen();
     }
 
