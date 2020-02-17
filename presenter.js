@@ -1,12 +1,18 @@
 import { View } from './view.js';
 import { Snake } from './snake.js';
 import { Timer } from './timer.js';
+import { Apfel } from './apfel.js';
 
 export class Presenter {
     constructor() {
         this.view = new View(this);
+
         this.snake = new Snake(this.view);
         this.snake.zeichnen();
+
+        this.apfel = new Apfel(this.view);
+        this.apfel.zeichnen();
+
         this.timer = new Timer(this, 500);
         this.timer.start();
     }
@@ -14,6 +20,7 @@ export class Presenter {
     timerAction() {
         this.snake.weiter();
         this.view.loescheAlles();
+        this.apfel.zeichnen();
         this.snake.zeichnen();
     }
 
