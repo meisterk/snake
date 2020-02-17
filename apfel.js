@@ -1,8 +1,8 @@
 export class Apfel {
     constructor(view) {
         this.view = view;
-        this.x = Math.random() * 200;
-        this.y = Math.random() * 400;
+        this.x = Math.floor(Math.random() * 20) * 10 + 5;
+        this.y = Math.floor(Math.random() * 40) * 10 + 5;
     }
 
     zeichnen() {
