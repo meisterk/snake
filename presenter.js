@@ -13,6 +13,8 @@ export class Presenter {
         this.apfel = new Apfel(this.view);
         this.apfel.zeichnen();
 
+        this.score = 0;
+
         this.timer = new Timer(this, 500);
         this.timer.start();
     }
@@ -21,6 +23,7 @@ export class Presenter {
         // Neu berechnen
         this.snake.weiter();
         if (this.snakeFrisstApfel()) {
+            this.score++;
             this.apfel.neuPositionieren();
         }
 
@@ -28,6 +31,7 @@ export class Presenter {
         this.view.loescheAlles();
         this.apfel.zeichnen();
         this.snake.zeichnen();
+        this.view.displayText('Score: ' + this.score);
     }
 
     snakeFrisstApfel() {
@@ -40,22 +44,18 @@ export class Presenter {
     }
 
     nachOben() {
-        this.view.displayText('nach Oben');
         this.snake.nachOben();
     }
 
     nachRechts() {
-        this.view.displayText('nach Rechts');
         this.snake.nachRechts();
     }
 
     nachUnten() {
-        this.view.displayText('nach Unten');
         this.snake.nachUnten();
     }
 
     nachLinks() {
-        this.view.displayText('nach Links');
         this.snake.nachLinks();
     }
 }
