@@ -2,38 +2,59 @@ export class Snake {
     constructor(view) {
         this.view = view;
 
-        this.x = 105;
-        this.y = 105;
+        this.schlange = [
+            { x: 105, y: 105 },
+            { x: 105, y: 95 },
+            { x: 105, y: 85 },
+            { x: 105, y: 75 },
+            { x: 105, y: 65 }
+        ];
+
         this.direction = 'NACH_UNTEN';
     }
 
     weiter() {
+        // Koerper bewegen
+        for (let i = this.schlange.length - 1; i >= 1; i--) {
+            this.schlange[i].x = this.schlange[i - 1].x;
+            this.schlange[i].y = this.schlange[i - 1].y;
+        }
+
+        // Kopf bewegen
+        const kopf = this.schlange[0];
         switch (this.direction) {
             case 'NACH_UNTEN':
-                this.y += 10;
-                if (this.y >= 400) {
-                    this.y = 5;
+                kopf.y += 10;
+                if (kopf.y >= 400) {
+                    kopf.y = 5;
                 }
                 break;
             case 'NACH_OBEN':
-                this.y -= 10;
-                if (this.y <= 0) {
-                    this.y = 395;
+                kopf.y -= 10;
+                if (kopf.y <= 0) {
+                    kopf.y = 395;
                 }
                 break;
             case 'NACH_LINKS':
-                this.x -= 10;
-                if (this.x <= 0) {
-                    this.x = 195;
+                kopf.x -= 10;
+                if (kopf.x <= 0) {
+                    kopf.x = 195;
                 }
                 break;
             case 'NACH_RECHTS':
-                this.x += 10;
-                if (this.x >= 200) {
-                    this.x = 5;
+                kopf.x += 10;
+                if (kopf.x >= 200) {
+                    kopf.x = 5;
                 }
                 break;
         }
+
+
+    }
+
+    verlaengern() {
+        const kopf = this.schlange[0];
+        this.schlange.push({ x: kopf.x, y: kopf.y });
     }
 
     nachOben() {
@@ -61,6 +82,8 @@ export class Snake {
     }
 
     zeichnen() {
-        this.view.zeichneKreis(this.x, this.y, 'black');
+        this.schlange.forEach(element => {
+            this.view.zeichneKreis(element.x, element.y, 'black');
+        });
     }
 }

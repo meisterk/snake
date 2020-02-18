@@ -15,7 +15,7 @@ export class Presenter {
 
         this.score = 0;
 
-        this.timer = new Timer(this, 500);
+        this.timer = new Timer(this, 200);
         this.timer.start();
     }
 
@@ -25,6 +25,7 @@ export class Presenter {
         if (this.snakeFrisstApfel()) {
             this.score++;
             this.apfel.neuPositionieren();
+            this.snake.verlaengern();
         }
 
         // Neu zeichnen
@@ -35,8 +36,9 @@ export class Presenter {
     }
 
     snakeFrisstApfel() {
-        if (this.snake.x === this.apfel.x &&
-            this.snake.y === this.apfel.y) {
+        const kopf = this.snake.schlange[0];
+        if (kopf.x === this.apfel.x &&
+            kopf.y === this.apfel.y) {
             return true;
         } else {
             return false;
