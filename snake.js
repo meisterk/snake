@@ -48,8 +48,17 @@ export class Snake {
                 }
                 break;
         }
+    }
 
-
+    selbstGefressen() {
+        const kopf = this.schlange[0];
+        for (let i = 1; i < this.schlange.length; i++) {
+            if (kopf.x === this.schlange[i].x &&
+                kopf.y === this.schlange[i].y) {
+                return true;
+            }
+        }
+        return false;
     }
 
     verlaengern() {

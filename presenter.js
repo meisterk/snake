@@ -22,6 +22,11 @@ export class Presenter {
     timerAction() {
         // Neu berechnen
         this.snake.weiter();
+        if (this.snake.selbstGefressen()) {
+            this.timer.stop();
+            alert('GAME OVER');
+        }
+
         if (this.snakeFrisstApfel()) {
             this.score++;
             this.apfel.neuPositionieren();
