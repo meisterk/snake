@@ -94,5 +94,7 @@ export class Snake {
         this.schlange.forEach(element => {
             this.view.zeichneKreis(element.x, element.y, 'black');
         });
+        const kopf = this.schlange[0];
+        this.view.zeichneKreis(kopf.x, kopf.y, 'yellow');
     }
 }
